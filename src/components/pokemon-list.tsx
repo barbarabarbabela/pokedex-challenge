@@ -35,8 +35,6 @@ function PokemonList() {
     return null
   }
 
-  console.log(data)
-
   return (
     <div className="mx-[69px] mt-[71px] grid gap-[42px] lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <PokemonCard

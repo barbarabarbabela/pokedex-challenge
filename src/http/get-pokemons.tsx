@@ -21,7 +21,5 @@ export async function getPokemons(
 
   const data = await response.json()
 
-  console.log(data)
-
   return data
 }
