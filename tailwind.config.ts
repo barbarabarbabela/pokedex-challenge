@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        azul: "#0F62C1",
+      },
+      fontFamily: {
+        nunito: ["var(--font-nunito-sans)"],
+        roboto: ["var(--font-roboto)"],
       },
     },
   },
