@@ -17,8 +17,6 @@ function PokemonCard({ number, name, src }: PokemonCardProps) {
     setModalOpen(!isModalOpen)
   }
 
-  console.log(data)
-
   return (
     <div className="lg:w-[294px] rounded-lg overflow-hidden shadow-md">
       <div className="bg-[#FFFFFF] flex flex-col justify-center">
