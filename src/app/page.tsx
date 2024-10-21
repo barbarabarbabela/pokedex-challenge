@@ -1,6 +1,5 @@
 'use client'
-import Header from '@/components/header'
-import PokemonList from '@/components/pokemon-list'
+import { Header, PokemonList } from '@/components'
 import { PokemonProvider } from '@/contexts/pokemon-context'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 

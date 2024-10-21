@@ -1,8 +1,7 @@
 import Image from 'next/image'
-import logo from '../assets/logo.png'
-import Button from './button'
-import { usePokemonContext } from '@/contexts/pokemon-context'
-import Input from './input'
+import logo from '../../assets/logo.png'
+import { usePokemonContext } from '@/hooks'
+import { Button, Input } from '@/components'
 import { useForm } from 'react-hook-form'
 
 interface FormProps {
@@ -29,7 +28,7 @@ function Header() {
         className="flex justify-center mt-20 gap-4"
       >
         <div>
-          <Input {...register('pokemon')} required placeholder="Pesquisar" />
+          <Input {...register('pokemon')} placeholder="Pesquisar" required />
           <p className="text-[#FFFFFF] text-xs mt-2">
             Busque por número ou nome
           </p>

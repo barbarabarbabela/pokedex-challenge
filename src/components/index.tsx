@@ -1,0 +1,6 @@
+export { default as Header } from './Header/header'
+export { default as PokemonList } from './PokemonList/pokemon-list'
+export { default as PokemonInfo } from './PokemonInfo/pokemon-info'
+export { default as Button } from './Button/button'
+export { default as Input } from './Input/input'
+export { default as PokemonCard } from './PokemonCard/pokemon-card'

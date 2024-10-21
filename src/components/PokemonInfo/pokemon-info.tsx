@@ -1,6 +1,5 @@
-import { capitalizeFirstLetter } from '@/shared/capitalize-first-letter'
-import Button from './button'
-import { formatPokemonNumber } from '@/shared/format-pokemon-id'
+import { Button } from '@/components'
+import { formatPokemonId, capitalizeFirstLetter } from '@/shared'
 
 interface PokemonInfoModalProps {
   isOpen: boolean
@@ -51,7 +50,7 @@ const PokemonInfoModal: React.FC<PokemonInfoModalProps> = ({
               {capitalizeFirstLetter(pokemon.species.name)}
             </h2>
             <p className="text-md font-semibold text-gray-500 mb-4">
-              {formatPokemonNumber(pokemon.id)}
+              {formatPokemonId(pokemon.id)}
             </p>
             <img
               src={pokemon.sprites.front_default}
@@ -61,7 +60,7 @@ const PokemonInfoModal: React.FC<PokemonInfoModalProps> = ({
             <div className="flex gap-4">
               <div className="text-center">
                 <span className="block text-sm text-gray-600 font-medium">
-                  Peso
+                  Weight
                 </span>
                 <span className="text-md font-bold text-gray-800">
                   {pokemon.weight / 10} kg
@@ -69,7 +68,7 @@ const PokemonInfoModal: React.FC<PokemonInfoModalProps> = ({
               </div>
               <div className="text-center">
                 <span className="block text-sm text-gray-600 font-medium">
-                  Altura
+                  Height
                 </span>
                 <span className="text-md font-bold text-gray-800">
                   {pokemon.height / 10} m

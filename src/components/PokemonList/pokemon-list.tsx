@@ -1,8 +1,6 @@
-import React from 'react'
-import PokemonCard from './pokemon-card'
-import { usePokemonQuery } from '../hooks/use-pokemon-query'
-import { capitalizeFirstLetter } from '@/shared/capitalize-first-letter'
-import { formatPokemonNumber } from '@/shared/format-pokemon-id'
+import { PokemonCard } from '@/components'
+import { usePokemonQuery } from '@/hooks'
+import { formatPokemonId, capitalizeFirstLetter } from '@/shared'
 
 function PokemonList() {
   const { data, isLoading, isError } = usePokemonQuery()
@@ -31,7 +29,7 @@ function PokemonList() {
     <div className="mx-[69px] mt-[71px] grid gap-[42px] lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <PokemonCard
         name={capitalizeFirstLetter(data.species.name)}
-        number={formatPokemonNumber(data.id)}
+        number={formatPokemonId(data.id)}
         src={data.sprites.front_default}
       />
     </div>

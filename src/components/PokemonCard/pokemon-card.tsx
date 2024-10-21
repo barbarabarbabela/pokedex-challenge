@@ -1,7 +1,7 @@
-import { usePokemonQuery } from '@/hooks/use-pokemon-query'
+import { usePokemonQuery } from '@/hooks'
 import { useState } from 'react'
 import { FaInfoCircle } from 'react-icons/fa'
-import PokemonInfoModal from './pokemon-info'
+import { PokemonInfo } from '@/components'
 
 interface PokemonCardProps {
   number: string
@@ -36,7 +36,7 @@ function PokemonCard({ number, name, src }: PokemonCardProps) {
       </div>
 
       {isModalOpen && (
-        <PokemonInfoModal
+        <PokemonInfo
           pokemon={data}
           onClose={handleOpenModal}
           isOpen={isModalOpen}
