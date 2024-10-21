@@ -1,22 +1,24 @@
 import Image from 'next/image'
 import logo from '../assets/logo.png'
-import Input from './input'
 import Button from './button'
 import { usePokemonContext } from '@/contexts/pokemon-context'
-import { useState } from 'react'
+import Input from './input'
+import { useForm } from 'react-hook-form'
+import PokemonCard from './pokemon-card'
+
+interface FormProps {
+  pokemon: string
+}
 
 function Header() {
   const { setPokemon } = usePokemonContext()
-  const [pokemonInput, setPokemonInput] = useState('')
+  const { handleSubmit, register, reset } = useForm<FormProps>()
 
-  const handleInputChange = (value: string) => {
-    setPokemonInput(value)
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setPokemon(pokemonInput.toLowerCase())
-    setPokemonInput('')
+  const submitForm = (data: FormProps) => {
+    console.log(data)
+    const pokemonIdentifier = data.pokemon.toLowerCase()
+    setPokemon(pokemonIdentifier)
+    reset()
   }
 
   return (
@@ -24,14 +26,17 @@ function Header() {
       <div className="mt-12 flex justify-center">
         <Image src={logo} alt="app logo" />
       </div>
-      <form onSubmit={handleSubmit} className="flex justify-center mt-20 gap-4">
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        className="flex justify-center mt-20 gap-4"
+      >
         <div>
-          <Input value={pokemonInput} onInputChange={handleInputChange} />
+          <Input {...register('pokemon')} placeholder="Pesquisar" />
           <p className="text-[#FFFFFF] text-xs mt-2">
             Busque por número ou nome
           </p>
         </div>
-        <Button type="submit">Buscar</Button>
+        <Button>Buscar</Button>
       </form>
     </div>
   )
