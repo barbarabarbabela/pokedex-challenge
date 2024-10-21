@@ -5,7 +5,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement>
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ name, type = 'text', ...props }, ref) => {
     return (
-      <div className="text-black-500 placeholder-[#C9CED4]">
+      <div className="text-black-500 placeholder-variant">
         <input
           {...props}
           type={type}

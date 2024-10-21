@@ -19,10 +19,10 @@ function PokemonCard({ number, name, src }: PokemonCardProps) {
 
   return (
     <div className="lg:w-[294px] rounded-lg overflow-hidden shadow-md">
-      <div className="bg-[#FFFFFF] flex flex-col justify-center">
+      <div className="bg-white flex flex-col justify-center">
         <div className="w-full flex justify-end p-2">
           <FaInfoCircle
-            className="w-6 h-6 cursor-pointer transition duration-200 ease-in-out hover:text-azul hover:bg-text-200 active:text-blue-300"
+            className="w-6 h-6 cursor-pointer transition duration-200 ease-in-out hover:text-default hover:bg-text-200 active:text-blue-300"
             onClick={handleOpenModal}
           />
         </div>

@@ -29,9 +29,7 @@ function Header() {
       >
         <div>
           <Input {...register('pokemon')} placeholder="Pesquisar" required />
-          <p className="text-[#FFFFFF] text-xs mt-2">
-            Busque por número ou nome
-          </p>
+          <p className="text-white text-xs mt-2">Busque por número ou nome</p>
         </div>
         <Button>Buscar</Button>
       </form>

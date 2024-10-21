@@ -11,7 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        azul: "#0F62C1",
+        default: "#0F62C1",
+        variant: "#C9CED4",
       },
       fontFamily: {
         nunito: ["var(--font-nunito-sans)"],

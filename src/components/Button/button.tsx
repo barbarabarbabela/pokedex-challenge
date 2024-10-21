@@ -8,7 +8,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   return (
-    <div className="w-[85px] h-11 bg-[#FFFFFF] text-azul border-azul border-[1px] flex items-center justify-center rounded-md transition duration-200 ease-in-out hover:bg-blue-100 active:bg-blue-200">
+    <div className="w-[85px] h-11 bg-white text-default border-default border-[1px] flex items-center justify-center rounded-md transition duration-200 ease-in-out hover:bg-blue-100 active:bg-blue-200">
       <button
         type={type}
         className="w-full h-full focus:outline-none"
