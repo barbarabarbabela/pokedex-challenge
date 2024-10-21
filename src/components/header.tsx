@@ -4,7 +4,6 @@ import Button from './button'
 import { usePokemonContext } from '@/contexts/pokemon-context'
 import Input from './input'
 import { useForm } from 'react-hook-form'
-import PokemonCard from './pokemon-card'
 
 interface FormProps {
   pokemon: string
@@ -15,7 +14,6 @@ function Header() {
   const { handleSubmit, register, reset } = useForm<FormProps>()
 
   const submitForm = (data: FormProps) => {
-    console.log(data)
     const pokemonIdentifier = data.pokemon.toLowerCase()
     setPokemon(pokemonIdentifier)
     reset()
@@ -31,7 +29,7 @@ function Header() {
         className="flex justify-center mt-20 gap-4"
       >
         <div>
-          <Input {...register('pokemon')} placeholder="Pesquisar" />
+          <Input {...register('pokemon')} required placeholder="Pesquisar" />
           <p className="text-[#FFFFFF] text-xs mt-2">
             Busque por número ou nome
           </p>
