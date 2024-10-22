@@ -9,6 +9,10 @@ export const usePokemonQuery = () => {
     queryKey: ['pokemon', pokemon],
     queryFn: () => getPokemons(pokemon),
     enabled: !!pokemon,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    refetchOnMount: false,
+    retry: false,
   })
 
   return { data, isLoading, isError }
