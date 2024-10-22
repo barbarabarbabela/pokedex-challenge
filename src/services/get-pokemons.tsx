@@ -8,7 +8,7 @@ export async function getPokemons(
   )
 
   if (!response.ok) {
-    throw new Error('Erro ao buscar Pokémon')
+    throw new Error('Pokemon not found')
   }
 
   const data: PokemonData = await response.json()
