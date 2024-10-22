@@ -1,9 +1,15 @@
-import { PokemonCard } from '@/components'
-import { usePokemonQuery } from '@/hooks'
-import { formatPokemonId, capitalizeFirstLetter } from '@/shared'
+import { PokemonCard, PokemonInfo } from '@/components'
+import { usePokemonContext, usePokemonQuery } from '@/hooks'
+import { useState } from 'react'
 
 function PokemonList() {
-  const { data, isLoading, isError } = usePokemonQuery()
+  const [isModalOpen, setModalOpen] = useState(false)
+  const { pokemon } = usePokemonContext()
+  const { data, isLoading, isError } = usePokemonQuery(pokemon)
+
+  const handleOpenModal = () => {
+    setModalOpen(!isModalOpen)
+  }
 
   if (isError) {
     return (
@@ -27,11 +33,14 @@ function PokemonList() {
 
   return (
     <div className="mx-[69px] mt-[71px] grid gap-[42px] lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
-      <PokemonCard
-        name={capitalizeFirstLetter(data.species.name)}
-        number={formatPokemonId(data.id)}
-        src={data.sprites.front_default}
-      />
+      <PokemonCard data={data} onClickInfo={handleOpenModal} />
+      {isModalOpen && (
+        <PokemonInfo
+          pokemon={data}
+          onClose={handleOpenModal}
+          isOpen={isModalOpen}
+        />
+      )}
     </div>
   )
 }
